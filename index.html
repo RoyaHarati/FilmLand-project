@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>🎬FilmLand</title>
+  </head>
+  <body>
+    <!--  -->
+    <header class="header">
+      <div class="header-inner">
+        <div class="header-actions ">
+          <button class="hamburger" title="Menu">☰ Menu</button>
+
+          <!-- منوی همبرگری -->
+
+          <nav class="Ham-menu">
+            <a href="index.html" class="Ham-link">🏠 Home</a>
+            <a href="#" class="Ham-link">🎬 Films</a>
+            <a href="#" class="Ham-link">📺 Series</a>
+            <a href="#" class="Ham-link">⭐ Favorite</a>
+            <a href="#" class="Ham-link">ℹ️ About Us</a>
+          </nav>
+          <a href="index.html" class="logo">🎬 FilmLand</a>
+        </div>
+
+        <!-- جستجو -->
+        <form class="search-form">
+          <input
+            type="text"
+            class="search-input"
+            placeholder="Searching Films & Series ..."
+          />
+          <button type="submit" class="search-btn">🔍</button>
+        </form>
+
+        <ul class="menu">
+          <li class="list-menu"><a href="#" class="menu-link">🎬 Films</a></li>
+          <li class="list-menu"><a href="#" class="menu-link">📺 Series</a></li>
+          <li class="list-menu">
+            <a href="#" class="menu-link">⭐ Favorite</a>
+          </li>
+          <li class="list-menu">
+            <a href="#" class="menu-link">ℹ️ About Us</a>
+          </li>
+        </ul>
+        <button class="theme-btn" title="Dark/Light Mode">🌙</button>
+        <button class="login-btn">Login</button>
+        <p class="user-name"></p>
+
+      </div>
+    </header>
+    <main>
+      <!-- Slide -->
+      <section class="section-Slide activeSection">
+        <i class="bx bx-chevron-left SlideBx leftSlide"></i>
+
+        <div class="slide show">
+          <img
+            src="assets/media/photo/inception.jpg"
+            alt="Inception"
+            class="slideImg"
+          />
+          <div class="Film-Info">
+            <h2>Inception</h2>
+            <span>📅 2010</span>
+            <span>⭐ 8.8</span>
+            <span>🎬 Science Fiction</span>
+          </div>
+        </div>
+        <div class="slide">
+          <img
+            src="assets/media/photo/TheDarkKnight.ipg.webp"
+            alt="Dark Night"
+            class="slideImg"
+          />
+          <div class="Film-Info">
+            <h2>The Dark Knight</h2>
+            <span>📅 2008</span>
+            <span>⭐ 9.0</span>
+            <span>🎬 Action</span>
+          </div>
+        </div>
+        <div class="slide">
+          <img
+            src="assets/media/photo/Interstellar.jpg"
+            alt="Interstellar"
+            class="slideImg"
+          />
+          <div class="Film-Info">
+            <h2>Interstellar</h2>
+            <span>📅 2014</span>
+            <span>⭐ 8.6</span>
+            <span>🎬 Science Fiction</span>
+          </div>
+        </div>
+
+        <i class="bx bx-chevron-right SlideBx rightSlide"></i>
+      </section>
+      <!-- featured -->
+      <section class="featured-section activeSection">
+        <h2 class="section-title">⭐ Featured Today</h2>
+        <i class="bx bx-chevron-left featuredbx leftBtn"></i>
+        <i class="bx bx-chevron-right featuredbx rightBtn"></i>
+        <div class="featured-Scroll">
+          <div class="featured-Cards"></div>
+        </div>
+      </section>
+            <!-- popular -->
+      <section class="popular-section activeSection">
+        <h2 class="section-title">⭐ popular Today</h2>
+        <i class="bx bx-chevron-left popularbx leftBtn"></i>
+        <i class="bx bx-chevron-right popularbx rightBtn"></i>
+        <div class="popular-Scroll">
+          <div class="popular-Cards"></div>
+        </div>
+      </section>
+      <!-- search -->
+      <section class="search-section">
+        <h2 class="section-title Title"></h2>
+
+        <div class="Search-content"></div>
+      </section>
+
+      <!-- popUp -->
+       <section class="popUp-section">
+        <div class="popUp-content"> 
+          <h2 class="title-popUp"></h2>
+          <div class="text-content">
+          <p class="text-popUp"></p>
+          <p class="text2-popUp"></p>
+          </div>
+         <i class='bx bx-x close-popUp'></i>
+          <button class="signin-popUp"></button>
+          <button class="continue-popUp"></button>
+        </div>
+       </section>
+       <section class="detail-popup">
+        
+       </section>
+    </main>
+    <script src="js/script.js"></script>
+  </body>
+</html>
