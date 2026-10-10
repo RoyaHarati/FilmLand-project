@@ -284,7 +284,6 @@ window.addEventListener("load", () => {
 
   setTimeout(() => {
     popUpSection.classList.add("activePop");
-    document.body.style.overflow = "hidden";
     const token = localStorage.getItem("token");
 
     if (!token) {
@@ -307,8 +306,8 @@ window.addEventListener("load", () => {
       signinBtn.textContent = "See What's New";
       continueBtn.textContent = "Maybe Later";
       signinBtn.addEventListener("click", () => {
-        popularSection.scrollIntoView({ behavior: "smooth" });
         popUpSection.classList.remove("activePop");
+        popularSection.scrollIntoView();
       });
       continueBtn.addEventListener("click", () => {
         popUpSection.classList.remove("activePop");
@@ -323,7 +322,6 @@ closePopUpBtn.addEventListener("click", () => {
 });
 
 window.addEventListener("click", (e) => {
-  if (!e.target.closest(".popUp-section"))
+  if (!e.target.closest(".popUp-content"))
     popUpSection.classList.remove("activePop");
-  document.body.style.overflow = "";
 });
