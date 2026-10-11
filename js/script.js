@@ -26,53 +26,105 @@ const continueBtn = document.querySelector(".continue-popUp");
 const titlePopUp = document.querySelector(".title-popUp");
 const textPopUp = document.querySelector(".text-popUp");
 const text2PopUp = document.querySelector(".text2-popUp");
-const detailPopup = document.querySelector(".detail-popup");
+const filmBtn = document.querySelector(".film");
+const filmMenuEl = document.querySelector(".film-menu");
+const seriesBtn = document.querySelector(".Series");
+const SeriesMenuEl = document.querySelector(".Series-menu");
 
 let currentIndex = 0;
+let currentIndexS = 0;
 
 // منو همبرگری ********************************************
 hamburgerBtn.addEventListener("click", () => {
-  if (menuEl.classList.contains("active")) {
+  if (
+    menuEl.classList.contains("active") ||
+    filmMenuEl.classList.contains("active") ||
+    SeriesMenuEl.classList.contains("active")
+  ) {
     menuEl.classList.remove("active");
+    filmMenuEl.classList.remove("active");
+    SeriesMenuEl.classList.remove("active");
+    seriesBtn.classList.remove("active-link");
+    filmBtn.classList.remove("active-link");
   } else {
     menuEl.classList.add("active");
   }
 });
 window.addEventListener("click", (e) => {
-  if (!e.target.closest(".hamburger") && !e.target.closest(".menu")) {
+  if (
+    !e.target.closest(".hamburger") &&
+    !e.target.closest(".menu") &&
+    !e.target.closest(".film") &&
+    !e.target.closest(".Series")
+  ) {
     menuEl.classList.remove("active");
+    filmMenuEl.classList.remove("active");
+    SeriesMenuEl.classList.remove("active");
+    seriesBtn.classList.remove("active-link");
+    filmBtn.classList.remove("active-link");
+  }
+});
+
+filmBtn.addEventListener("click", (e) => {
+  e.preventDefault();
+  if (filmMenuEl.classList.contains("active")) {
+    filmBtn.classList.add("active-link");
+    filmMenuEl.classList.remove("active");
+  } else if (SeriesMenuEl.classList.contains("active")) {
+    seriesBtn.classList.remove("active-link");
+    SeriesMenuEl.classList.remove("active");
+    filmMenuEl.classList.add("active");
+    filmBtn.classList.add("active-link");
+  } else {
+    filmBtn.classList.add("active-link");
+    filmMenuEl.classList.add("active");
+  }
+});
+seriesBtn.addEventListener("click", (e) => {
+  e.preventDefault();
+  if (SeriesMenuEl.classList.contains("active")) {
+    seriesBtn.classList.remove("active-link");
+    SeriesMenuEl.classList.remove("active");
+  } else if (filmMenuEl.classList.contains("active")) {
+    filmBtn.classList.remove("active-link");
+    filmMenuEl.classList.remove("active");
+    SeriesMenuEl.classList.add("active");
+    seriesBtn.classList.add("active-link");
+  } else {
+    seriesBtn.classList.add("active-link");
+    SeriesMenuEl.classList.add("active");
   }
 });
 
 //  اسلایدر *****************************************************
 
 setInterval(() => {
-  divSlideEl[currentIndex].classList.remove("show");
-  currentIndex++;
+  divSlideEl[currentIndexS].classList.remove("show");
+  currentIndexS++;
 
-  if (currentIndex === divSlideEl.length) {
-    currentIndex = 0;
+  if (currentIndexS === divSlideEl.length) {
+    currentIndexS = 0;
   }
-  divSlideEl[currentIndex].classList.add("show");
+  divSlideEl[currentIndexS].classList.add("show");
 }, 3000);
 
 nextBtn.addEventListener("click", () => {
-  divSlideEl[currentIndex].classList.remove("show");
-  currentIndex++;
+  divSlideEl[currentIndexS].classList.remove("show");
+  currentIndexS++;
 
-  if (currentIndex === divSlideEl.length) {
-    currentIndex = 0;
+  if (currentIndexS === divSlideEl.length) {
+    currentIndexS = 0;
   }
-  divSlideEl[currentIndex].classList.add("show");
+  divSlideEl[currentIndexS].classList.add("show");
 });
 
 prevBtn.addEventListener("click", () => {
-  divSlideEl[currentIndex].classList.remove("show");
-  currentIndex--;
-  if (currentIndex < 0) {
-    currentIndex = divSlideEl.length - 1;
+  divSlideEl[currentIndexS].classList.remove("show");
+  currentIndexS--;
+  if (currentIndexS < 0) {
+    currentIndexS = divSlideEl.length - 1;
   }
-  divSlideEl[currentIndex].classList.add("show");
+  divSlideEl[currentIndexS].classList.add("show");
 });
 
 //  featuredCards ********************************************
@@ -113,7 +165,6 @@ const showCards = () => {
       allCards = document.querySelectorAll(".featured-Cards .card");
       showCards();
     }
-
   } catch (error) {
     console.log(error);
     featuredCards.innerHTML = "<p> Error loading movies</p>";

@@ -61,6 +61,6 @@ window.addEventListener("load", () => {
   if (theme === "light") {
     document.body.classList.add("light-mode");
   } else {
-    document.body.classList.add("dark-mode");
+    document.body.classList.remove("light-mode");
   }
 });

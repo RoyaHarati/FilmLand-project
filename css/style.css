@@ -231,7 +231,7 @@ body {
   transition: 0.1s;
 }
 .movies-list {
-  padding: 10px 0 5px 10px;
+  padding: 10px 0 5px 15px;
   margin-top: 10px;
   position: absolute;
   top: 100%;
@@ -240,8 +240,8 @@ body {
   flex-direction: column;
   align-items: flex-start;
   justify-content: space-evenly;
-  width: 200px;
-  height: 260px;
+  width: 260px;
+  height: 280px;
   z-index: 1000;
   border-radius: 10px;
   color: #ccc;
@@ -268,39 +268,144 @@ body {
 }
 /* ******** منوی همبرگری ******** */
 .Ham-menu {
-  width: 250px;
+  margin-top: 3px;
   display: flex;
   flex-direction: column;
-  background: #16213e;
+  align-items: flex-start;
+  justify-content: space-around;
+  gap: 25px;
+  background-color: #1a1a2e;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
   border-top: 1px solid #333;
-  padding: 15px 30px;
-  gap: 5px;
+  padding: 8px 0px;
   position: absolute;
   z-index: 1000;
-  left: 0%;
+  left: 0;
   top: 100%;
   border-radius: 10px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
   opacity: 0;
   visibility: hidden;
   transition: all 0.5s;
 }
+.Ham-menu >a{
+  padding: 5px 20px;
+}
+.film-menu {
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 100%;
+  transition: 0.1s;
+   background-color: #1a1a2e;
+  box-shadow:5px 5px 5px  rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  border-top: 1px solid #333;
+  
+}
+.film-list {
+  padding: 0 0 5px 15px;
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-evenly;
+  width: 260px;
+  min-height: 310px;
+  z-index: 1000;
+  color: #ccc;
+ 
+}
+.film-list > li {
+  transition: all 0.6s;
+  border-bottom: 1px solid transparent;
+  cursor: pointer;
+padding: 8px;
+}
+.film-list > li:hover {
+  border-bottom: 1px solid #f5c542;
+  text-decoration: none;
+}
+.film-menu > h5 {
+  display: flex ;
+  align-items: center ;
+  justify-content: center ;
+  color: #ccc;
+  padding-top: 10px;
+}
+
+.Series-menu {
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 100%;
+  transition: 0.1s;
+   background-color: #1a1a2e;
+  box-shadow:5px 5px 5px  rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  border-top: 1px solid #333;
+  
+}
+.Series-list {
+  padding: 0 0 5px 15px;
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-evenly;
+  width: 260px;
+  min-height: 310px;
+  z-index: 1000;
+  color: #ccc;
+ 
+}
+.Series-list > li {
+  transition: all 0.6s;
+  border-bottom: 1px solid transparent;
+  cursor: pointer;
+padding: 8px;
+}
+.Series-list > li:hover {
+  border-bottom: 1px solid #f5c542;
+  text-decoration: none;
+}
+.Series-menu > h5 {
+  display: flex ;
+  align-items: center ;
+  justify-content: center ;
+  padding-top: 10px;
+  color: #ccc;
+}
+.film,
+.series {
+  position: relative;
+  transition:  0.8s;
+}
+
+.show-menu {
+  opacity: 1;
+  visibility: visible;
+}
 
 .active {
-  opacity: 0.7;
+  opacity: 1;
   visibility: visible;
 }
 
 .Ham-link {
   color: white;
   text-decoration: none;
-  padding: 12px 15px;
   border-radius: 8px;
   transition: 0.3s;
-  font-size: 20px;
+  font-size: 16px;
 }
 
 .Ham-link:hover {
+  background: #f5c542;
+  color: #0f0f1e;
+}
+.active-link {
   background: #f5c542;
   color: #0f0f1e;
 }
@@ -731,7 +836,7 @@ body {
   justify-content: center;
   position: relative;
 }
-.popUp-content> h2 {
+.popUp-content > h2 {
   color: rgb(245, 197, 66);
   font-size: 24px;
 }
@@ -745,7 +850,7 @@ body {
   text-align: center;
   gap: 10px;
 }
-.popUp-content> button {
+.popUp-content > button {
   background: #f5c542;
   color: #0f0f1e;
   padding: 5px 12px;
@@ -874,8 +979,8 @@ body {
     width: 35%;
     gap: 0;
   }
- .section-title {
-    font-size:25px;
+  .section-title {
+    font-size: 25px;
     padding: 30px 0 30px 80px;
   }
 }
@@ -887,7 +992,7 @@ body {
 }
 @media (max-width: 600px) {
   .section-title {
-    font-size:25px;
+    font-size: 25px;
     padding: 30px 0 30px 80px;
   }
   .search-section {
@@ -933,14 +1038,12 @@ body {
   .search-btn {
     width: 10px;
   }
-  .rightBtn{
-      right: 3%;
-      width: 20px;
-
+  .rightBtn {
+    right: 3%;
+    width: 20px;
   }
-   .leftBtn{
-      left: 3%;
-      width: 20px;
-
+  .leftBtn {
+    left: 3%;
+    width: 20px;
   }
 }
