@@ -44,7 +44,7 @@ if(e.username===userLoginInp.value){
       } else {
         document.body.classList.remove("light-mode");
       }
-      window.location.href = "index.html";
+      window.location.href = "../index.html";
     }
   } catch (error) {
     console.log(error);

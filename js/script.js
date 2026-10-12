@@ -327,7 +327,7 @@ window.addEventListener("load", () => {
     userName.textContent = "";
     loginBtn.textContent = "Login";
     loginBtn.addEventListener("click", () => {
-      window.location.href = "login.html";
+      window.location.href = "pages/login.html";
     });
   }
 
@@ -345,7 +345,7 @@ window.addEventListener("load", () => {
       signinBtn.textContent = "SignIn";
       continueBtn.textContent = "Continue as Guest";
       signinBtn.addEventListener("click", () => {
-        window.location.href = "login.html";
+        window.location.href = "pages/login.html";
       });
       continueBtn.addEventListener("click", () => {
         popUpSection.classList.remove("activePop");
