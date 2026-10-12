@@ -1058,6 +1058,20 @@ body {
     left: 3%;
     width: 20px;
   }
+  .popUp-content{
+    width: 300px;
+    height: 300px;
+  }
+  .popUp-content > h2 {
+    font-size: 20px;
+}
+.close-popUp {
+      font-size: 15px;
+}
+.text-content {
+    font-size: 14px;
+}
+
 }
 @media (max-width: 391px) {
 
