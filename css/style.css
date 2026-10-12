@@ -469,10 +469,10 @@ padding: 8px;
 }
 
 .rightSlide {
-  right: 70px;
+  right: 3%;
 }
 .leftSlide {
-  left: 70px;
+  left: 3%;
 }
 .SlideBx:hover {
   transform: scale(1.1);
@@ -925,6 +925,12 @@ padding: 8px;
   }
 }
 @media (max-width: 952px) {
+  /* .rightSlide {
+  right: 70px;
+}
+.leftSlide {
+  left: 70px;
+} */
   .rightBtn {
     right: 4.5%;
   }
@@ -982,6 +988,13 @@ padding: 8px;
   .section-title {
     font-size: 25px;
     padding: 30px 0 30px 80px;
+  }
+  .login-section {
+  width: 350px;
+ 
+}
+.back-a {
+    font-size: 12px;
   }
 }
 @media (max-width: 678px) {
